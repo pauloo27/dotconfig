@@ -1,0 +1,13 @@
+import=["~/.config/alacritty/catppuccin-mocha.toml"]
+#import=["~/.config/alacritty/carbonfox.toml"]
+
+[window]
+opacity=0.8
+padding={x = 10, y = 10}
+
+[font]
+normal={family="Comic Code Medium", style="Regular"}
+size=11
+
+[cursor]
+style={shape = "Beam", blinking="On"}
