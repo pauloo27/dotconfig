@@ -21,18 +21,22 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion::complete:*' gain-privileges 1
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+source ~/.zplug/init.zsh
 
-ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "plugins/sudo",   from:oh-my-zsh
+
+zplug load
 
 # Load integrations
 eval "$(starship init zsh)"
 source $ZDOTDIR/aliases
 
 # Set history stuff
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
