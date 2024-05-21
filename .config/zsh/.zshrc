@@ -2,6 +2,8 @@
 export EDITOR=nvim
 export GPG_TTY=$(tty)
 
+eval "$(zoxide init --cmd cd zsh)"
+
 # Load Keybinds
 autoload -U select-word-style
 select-word-style bash
