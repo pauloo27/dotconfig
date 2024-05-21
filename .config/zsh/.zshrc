@@ -23,15 +23,8 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion::complete:*' gain-privileges 1
 
 # Plugins
-source ~/.zplug/init.zsh
-
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions"
-zplug "plugins/sudo",   from:oh-my-zsh
-
-zplug load
+source /usr/share/zsh-antidote/zsh-antidote.zsh
+antidote load
 
 # Load integrations
 eval "$(starship init zsh)"
