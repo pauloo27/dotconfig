@@ -23,7 +23,7 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion::complete:*' gain-privileges 1
 
 # Plugins
-source /usr/share/zsh-antidote/zsh-antidote.zsh
+source /usr/share/zsh-antidote/antidote.zsh
 antidote load
 
 # Load integrations
