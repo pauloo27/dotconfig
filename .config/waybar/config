@@ -1,0 +1,68 @@
+{
+  "layer": "top",
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["custom/rstroller"],
+  "modules-right": ["pulseaudio", "tray", "privacy", "clock"],
+  "custom/rstroller": {
+    "exec": "rstroller waybar",
+    "return-type": "json",
+    "on-click": "rstroller-gui"
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  },
+  "hyprland/window": {
+    "format": " {}",
+    "max-length": 40,
+    "separate-outputs": true
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10
+  },
+  "wlr/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": true
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} | {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": ""
+    },
+    "on-click": "pavucontrol"
+  },
+  "clock": {
+    "format": "<span color='#cba6f7'> </span>{:%H:%M}",
+    "format-alt": "<span color='#cba6f7'> </span>{:%a, %d %b • %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  }
+}
