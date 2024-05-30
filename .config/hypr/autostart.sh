@@ -6,6 +6,6 @@ dunst &
 waybar &
 
 dex -a -s .config/autostart/
-redshift -PO 5000 &
+wlsunset -T 5000 &
 
 exit 0
