@@ -39,10 +39,10 @@
     "icon-size": 15,
     "spacing": 10
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
-    "all-outputs": true
+    "all-outputs": false
   },
   "pulseaudio": {
     "format": "{volume}% {icon} | {format_source}",
@@ -61,7 +61,7 @@
     "on-click": "pavucontrol"
   },
   "clock": {
-    "on-click": "planify",
+    "on-click": "env GTK_THEME=\"\" planify",
     "format": "<span color='#cba6f7'> </span>{:%H:%M}",
     "tooltip-format": "<big>{:%a, %d %b • %H:%M}</big>\n<tt><small>{calendar}</small></tt>"
   }
