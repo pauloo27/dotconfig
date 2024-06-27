@@ -1,0 +1,55 @@
+{
+  "title": "SMSH: Power",
+  "enable_vim_keys": true,
+  "enable_esc_as_exit": true,
+  "container": {
+    "orientation": "Vertical",
+    "children": [
+      {
+        "type": "Button",
+        "text": "",
+        "tooltip": "Shutdown",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"shutdown now\""
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "text": "",
+        "tooltip": "Reboot",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"reboot\""
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "text": "󰗽",
+        "tooltip": "Logout",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"hyprctl dispatch exit exit\""
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

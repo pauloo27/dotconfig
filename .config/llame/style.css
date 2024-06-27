@@ -1,0 +1,23 @@
+window {
+  min-height: 350px;
+  min-width: 650px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 0;
+}
+
+button:focus {
+  background-color: #7f849c;
+  color: #fff;
+}
+
+entry {
+  min-width: 400px;
+  padding: 10px 20px;
+  font-size: 22px;
+  background-color: #1e1e2e;
+  border: 1px solid #7f849c;
+}

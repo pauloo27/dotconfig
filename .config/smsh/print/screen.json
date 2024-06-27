@@ -1,0 +1,40 @@
+{
+  "title": "SMSH: Print Window",
+  "enable_vim_keys": true,
+  "enable_esc_as_exit": true,
+  "container": {
+    "orientation": "Vertical",
+    "children": [
+      {
+        "type": "Button",
+        "text": "",
+        "tooltip": "Save a specific screen",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "hyprshot -m output -o /home/paulo/medias/pictures/prints"
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "text": "",
+        "tooltip": "Copy a specific screen",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "hyprshot -m output --clipboard-only"
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  }
+}
