@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -e /var/lib/pacman/db.lck ]; then
+  notify-send 'Cannot do that while pacman is running' -i system-reboot -u critical
+else
+  eval $1
+fi
+
