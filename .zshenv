@@ -9,4 +9,7 @@ export PATH="$PATH:$GOPATH/bin"
 # good to have
 export PATH="$HOME/.local/bin:$PATH"
 
+# some general scripts
+export PATH="$HOME/.config/scripts:$PATH"
+
 [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh

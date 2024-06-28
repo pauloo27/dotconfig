@@ -1,0 +1,15 @@
+#!/bin/sh
+
+C_GREEN="\033[38;5;6m"
+C_RED="\033[38;5;5m"
+C_RESET="\033[0m"
+
+if [ "$1" = "upgraded" ]; then
+  updates_count="0"
+else
+  yay -Sy
+  updates_count="$(yay -Qun | grep -v 'Avoid running yay as root' -c)"
+fi
+
+echo "$updates_count" > /home/paulo/.cache/available_updates
+
