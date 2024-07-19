@@ -2,8 +2,6 @@
 export EDITOR=nvim
 export GPG_TTY=$(tty)
 
-eval "$(zoxide init --cmd cd zsh)"
-
 # Load Keybinds
 autoload -U select-word-style
 select-word-style bash
@@ -12,11 +10,14 @@ source $ZDOTDIR/keybinds
 # Completion
 autoload -Uz compinit
 compinit
+
+# `cd` but better
+eval "$(zoxide init --cmd cd zsh)"
+
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
