@@ -6,10 +6,6 @@ alias secret="cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n
 
 # Git cool
 
-## GitHub create
-alias ,gh="hub create"
-alias ,ghp="hub create -p"
-
 ## Init
 alias ,init="git init"
 
@@ -65,18 +61,6 @@ alias ,rs="git checkout" # Reset
 
 ## Switch
 alias ,sw="git switch" # Switch branch
-alias ,swd="git switch dev" # Switch to dev
-alias ,swm="git switch master" # Switch to master
-
-## Branch
-alias ,b="git branch" # Create new branch
-alias ,bsw="git checkout -b" # Create new branch and switch to it
-
-## Stash
-alias ,stx="git stash" # Create a stash
-alias ,stxd="git stash drop" # Drop a stash
-alias ,stxp="git stash pop" # Restore a stash
-alias ,stxa="git stash apply" # Apply a stash
 
 ## Push/Pull
 alias ,ps="git push"
@@ -121,3 +105,4 @@ alias p=pnpm
 
 # vim
 alias vim=nvim
+alias v=nvim
