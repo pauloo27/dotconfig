@@ -11,7 +11,7 @@ normal={family="Comic Code Medium", style="Regular"}
 size=10
 
 [cursor]
-style={shape = "Beam", blinking="On"}
+style={blinking="On"}
 
 [mouse]
 hide_when_typing=true
