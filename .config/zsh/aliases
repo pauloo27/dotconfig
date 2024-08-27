@@ -15,8 +15,6 @@ alias ,ls="git log --show-signatures"
 
 ## Merge
 alias ,m="git merge"
-alias ,md="git merge dev"
-alias ,mm="git merge master"
 
 ## Submodule foreach
 alias ,fe="git submodule foreach"
@@ -59,7 +57,8 @@ alias ,cl="git clone"
 ## Reset
 alias ,rs="git checkout" # Reset
 
-## Switch
+## Branch
+alias ,b="git branch" # Create new branch
 alias ,sw="git switch" # Switch branch
 
 ## Push/Pull
