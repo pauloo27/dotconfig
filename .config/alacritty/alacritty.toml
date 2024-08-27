@@ -1,6 +1,7 @@
 #import=["~/.config/alacritty/catppuccin-mocha.toml"]
 #import=["~/.config/alacritty/catppuccin-latte.toml"]
-import=["~/.config/alacritty/rose-pine-dawn.toml"]
+#import=["~/.config/alacritty/rose-pine-dawn.toml"]
+import=["~/.config/alacritty/rose-pine-moon.toml"]
 
 [window]
 opacity=1
