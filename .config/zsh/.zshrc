@@ -2,6 +2,7 @@
 export EDITOR=nvim
 export GPG_TTY=$(tty)
 
+
 # Load Keybinds
 autoload -U select-word-style
 select-word-style bash
@@ -24,6 +25,10 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion::complete:*' gain-privileges 1
 
 # Plugins
+
+# zsh mode and fzf history conflicts without this:  
+ZVM_INIT_MODE=sourcing
+
 source ~/.local/antidote.zsh # i just symlink from /usr/share/zsh-antidote/antidote.zsh
 antidote load
 
