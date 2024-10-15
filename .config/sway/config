@@ -18,18 +18,29 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $menu smsh ~/.config/smsh/prompt.json ~/.config/smsh/prompt.css | xargs swaymsg exec --
+set $menu_advanced llame
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+output HDMI-A-1 bg /home/paulo/medias/pictures/wallpapers/enabled/1.jpg fill
+output DP-1 bg /home/paulo/medias/pictures/wallpapers/enabled/2.jpg fill
+
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+# DP-1 monitor settings
+output DP-1 resolution 1920x1080@144Hz position 1080 600 enable
+
+# HDMI-A-1 monitor settings (rotated 90 degrees to the left)
+output HDMI-A-1 resolution 2560x1080@75Hz position 0 0 transform 270 enable
 
 ### Idle configuration
 #
@@ -54,7 +65,14 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #       natural_scroll enabled
 #       middle_emulation enabled
 #   }
-#
+
+input "type:keyboard" {
+    xkb_layout us
+    xkb_variant altgr-intl
+    # Uncomment to swap Esc and Caps Lock
+    # xkb_options caps:swapescape
+}
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -71,6 +89,36 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Start your launcher
+    bindsym $mod+Shift+d exec $menu
+
+    # Start your advanced launcher
+    bindsym $mod+Shift+Return exec $menu_advanced
+
+    # Key bindings for launching applications
+    bindsym $mod+W exec firefox
+    bindsym $mod+A exec nautilus
+    bindsym $mod+Shift+P exec rstroller-gui
+    bindsym $mod+Shift+E exec smsh ~/.config/smsh/power.json ~/.config/smsh/style.css
+    bindsym $mod+Shift+S exec hyprshot -m region --clipboard-only
+    bindsym Print exec smsh ~/.config/smsh/print/main.json ~/.config/smsh/style.css
+    bindsym Ctrl+Alt+E exec emo
+
+    # Mouse button bindings for multimedia controls
+    #bindsym button8 exec rstroller play-pause
+    #bindsym button9 exec rstroller play-pause
+    #bindsym button7 exec xte "key F8"
+
+    # Volume controls with mouse buttons
+    #bindsym $mod+button8 exec rstroller volume 0.05+
+    #bindsym $mod+button7 exec rstroller volume 0.05-
+
+    # Media controls with mouse buttons
+    #bindsym $mod+button8 exec rstroller next
+    #bindsym $mod+button7 exec rstroller previous
+
+    # Other keybindings
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -80,9 +128,6 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -134,6 +179,13 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    # Move current workspace to the previous output (monitor)
+    bindsym $mod+Shift+comma move workspace to output left
+
+    # Move current workspace to the next output (monitor)
+    bindsym $mod+Shift+period move workspace to output right
+
 #
 # Layout stuff:
 #
@@ -145,7 +197,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    bindsym $mod+t layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -158,7 +210,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    #bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -213,5 +265,11 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+# Floating and stuff
+for_window [app_id="Rstroller"] floating enable
+for_window [app_id="Emo"] floating enable
+for_window [app_id="Llame"] floating enable
+for_window [app_id="SMSH"] floating enable
 
 include /etc/sway/config.d/*
