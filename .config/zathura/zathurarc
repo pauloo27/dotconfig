@@ -1,5 +1,5 @@
-#include theme-cat-latte
-include theme-cat-mocha
+include theme-cat-latte
+#include theme-cat-mocha
 
 set statusbar-v-padding  15
 set statusbar-h-padding  75
