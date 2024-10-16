@@ -104,18 +104,27 @@ input "type:keyboard" {
     bindsym Print exec smsh ~/.config/smsh/print/main.json ~/.config/smsh/style.css
     bindsym Ctrl+Alt+E exec emo
 
-    # Mouse button bindings for multimedia controls
-    #bindsym button8 exec rstroller play-pause
-    #bindsym button9 exec rstroller play-pause
-    #bindsym button7 exec xte "key F8"
+    # Dirty hack to prevent "back" button from backing, while having it!
+    bindsym --whole-window button8 exec xte "key F8"
 
-    # Volume controls with mouse buttons
-    #bindsym $mod+button8 exec rstroller volume 0.05+
-    #bindsym $mod+button7 exec rstroller volume 0.05-
+    # Controll media with mouse!
+    bindsym --whole-window button9 exec rstroller play-pause
+    bindsym --whole-window $mod+button9 exec rstroller next
+    bindsym --whole-window $mod+button8 exec rstroller previous
+    bindsym --whole-window Alt+button9 exec rstroller volume 0.05+
+    bindsym --whole-window Alt+button8 exec rstroller volume 0.05-
 
-    # Media controls with mouse buttons
-    #bindsym $mod+button8 exec rstroller next
-    #bindsym $mod+button7 exec rstroller previous
+    # Media Keys - Volume control
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
+    # Media Keys - Media playback control
+    bindsym XF86AudioPlay exec rstroller play-pause
+    bindsym XF86AudioPause exec rstroller play-pause
+    bindsym XF86AudioNext exec rstroller next
+    bindsym XF86AudioPrev exec rstroller previous
+
 
     # Other keybindings
 
