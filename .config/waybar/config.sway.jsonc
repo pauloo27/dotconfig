@@ -1,0 +1,7 @@
+{
+  "modules-left": ["sway/workspaces"],
+  "sway/workspaces": {
+    "format": "{name}",
+    "all-outputs": false
+  }
+}

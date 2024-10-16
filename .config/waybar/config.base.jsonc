@@ -1,6 +1,5 @@
 {
   "layer": "top",
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["custom/rstroller"],
   "modules-right": ["pulseaudio", "tray", "privacy", "clock"],
   "custom/rstroller": {
@@ -30,19 +29,9 @@
       }
     ]
   },
-  "hyprland/window": {
-    "format": " {}",
-    "max-length": 40,
-    "separate-outputs": true
-  },
   "tray": {
     "icon-size": 15,
     "spacing": 10
-  },
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "on-click": "activate",
-    "all-outputs": false
   },
   "pulseaudio": {
     "format": "{volume}% {icon} | {format_source}",

@@ -1,0 +1,9 @@
+@import url("./style.css");
+
+#workspaces button {
+  padding: 0;
+}
+
+#workspaces button.focused {
+  color: #cba6f7;
+}

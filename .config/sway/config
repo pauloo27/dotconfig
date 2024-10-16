@@ -252,23 +252,7 @@ bindsym $mod+r mode "resize"
 titlebar_padding 1
 titlebar_border_thickness 1
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+exec ~/.config/waybar/launch.sh
 
 # Floating and stuff
 for_window [app_id="Rstroller"] floating enable
