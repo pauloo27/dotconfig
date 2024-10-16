@@ -5,7 +5,7 @@ import=["~/.config/alacritty/rose-pine-moon.toml"]
 
 [window]
 opacity=1
-padding={x = 20, y = 20}
+padding={x = 10, y = 10}
 
 [font]
 normal={family="Comic Code Medium", style="Regular"}
