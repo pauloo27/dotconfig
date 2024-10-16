@@ -42,7 +42,7 @@
         "actions": [
           {
             "type": "Shell",
-            "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"hyprctl dispatch exit exit\""
+            "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"hyprctl dispatch exit exit || swaymsg exit\""
           },
           {
             "type": "ExitWithCode",
