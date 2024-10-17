@@ -260,7 +260,7 @@ bindsym $mod+r mode "resize"
 # Title and gaps
 titlebar_padding 1
 titlebar_border_thickness 1
-gaps inner 5
+#gaps inner 5
 
 # Waybar
 exec ~/.config/waybar/launch.sh
