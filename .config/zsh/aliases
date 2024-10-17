@@ -65,6 +65,9 @@ alias ,sw="git switch" # Switch branch
 alias ,ps="git push"
 alias ,pl="git pull"
 
+## Stash
+alias ,sh="git stash --include-untracked --message"
+
 # Cool
 alias ipp="curl ifconfig.io"
 alias eslint="npx eslint"
