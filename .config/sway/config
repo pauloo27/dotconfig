@@ -265,6 +265,9 @@ titlebar_border_thickness 1
 # Waybar
 exec ~/.config/waybar/launch.sh
 
+# Startup apps
+exec dex -a -s .config/autostart/
+
 # Floating and stuff
 for_window [app_id="Rstroller"] floating enable
 for_window [app_id="Emo"] floating enable
