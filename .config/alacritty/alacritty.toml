@@ -1,3 +1,4 @@
+[general]
 #import=["~/.config/alacritty/catppuccin-mocha.toml"]
 #import=["~/.config/alacritty/catppuccin-latte.toml"]
 #import=["~/.config/alacritty/rose-pine-dawn.toml"]
