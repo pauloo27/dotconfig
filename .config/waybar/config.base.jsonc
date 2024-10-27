@@ -1,13 +1,40 @@
 {
   "layer": "top",
   "modules-center": ["custom/rstroller"],
-  "modules-right": ["pulseaudio", "tray", "privacy", "clock"],
+  "modules-right": ["pulseaudio", "group/laptop", "tray", "privacy", "clock"],
   "custom/rstroller": {
     "exec": "rstroller waybar 2> /tmp/rstroller-log",
     "return-type": "json",
     "on-click": "rstroller-gui",
     "on-scroll-up": "rstroller scroll-player up",
     "on-scroll-down": "rstroller scroll-player down"
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+    "scroll-step": 5
+  },
+  "group/laptop": {
+    "modules": ["battery", "backlight"],
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+  },
+  "battery": {
+    "bat": "BAT0",
+    "weighted-average": true,
+    "interval": 10,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰚥 {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
   },
   "privacy": {
     "icon-spacing": 4,
@@ -35,6 +62,11 @@
     "icon-size": 15,
     "spacing": 10
   },
+  "wlr/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": true
+  },
   "pulseaudio": {
     "format": "{volume}% {icon} | {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -54,6 +86,8 @@
   "clock": {
     "on-click": "planify",
     "format": "<span color='#cba6f7'> </span>{:%H:%M}",
-    "tooltip-format": "<big>{:%a, %d %b • %H:%M}</big>\n<tt><small>{calendar}</small></tt>"
+    "format-alt": "<span color='#cba6f7'> </span>{:%a, %d %b • %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }
+
