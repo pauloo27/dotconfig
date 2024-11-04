@@ -37,6 +37,21 @@
       },
       {
         "type": "Button",
+        "text": "",
+        "tooltip": "Reboot into Windows",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"~/.config/scripts/reboot-into-windows.sh\""
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "Button",
         "text": "󰗽",
         "tooltip": "Logout",
         "actions": [
