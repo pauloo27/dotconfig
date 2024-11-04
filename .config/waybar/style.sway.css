@@ -9,5 +9,6 @@
 }
 
 window#waybar {
-  background-color: rgb(17, 17, 27);
+  /*background-color: rgb(17, 17, 27);*/
+  background-color: #285577;
 }
