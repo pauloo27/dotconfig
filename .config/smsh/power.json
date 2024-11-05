@@ -7,6 +7,21 @@
     "children": [
       {
         "type": "Button",
+        "text": "",
+        "tooltip": "Lock",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "swaylock"
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "Button",
         "text": "",
         "tooltip": "Shutdown",
         "actions": [
@@ -28,21 +43,6 @@
           {
             "type": "Shell",
             "value": "smsh ~/.config/smsh/confirm.json ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman \"reboot\""
-          },
-          {
-            "type": "ExitWithCode",
-            "value": "0"
-          }
-        ]
-      },
-      {
-        "type": "Button",
-        "text": "",
-        "tooltip": "Lock",
-        "actions": [
-          {
-            "type": "Shell",
-            "value": "swaylock"
           },
           {
             "type": "ExitWithCode",
