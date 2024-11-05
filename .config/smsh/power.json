@@ -37,6 +37,21 @@
       },
       {
         "type": "Button",
+        "text": "",
+        "tooltip": "Lock",
+        "actions": [
+          {
+            "type": "Shell",
+            "value": "swaylock"
+          },
+          {
+            "type": "ExitWithCode",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "Button",
         "text": "",
         "tooltip": "Reboot into Windows",
         "actions": [
