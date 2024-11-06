@@ -25,3 +25,8 @@ disabled = true
 
 [elixir]
 disabled = true
+
+[kubernetes]
+disabled = false
+symbol = "⎈ "
+style = "blue"
