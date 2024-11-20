@@ -1,0 +1,14 @@
+[user]
+	signingkey = 9C547E6289CF30DB
+	email = git@pauloo27.dev
+	name = Paulo
+[core]
+  editor = nvim --cmd 'let g:unception_block_while_host_edits=1'
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
