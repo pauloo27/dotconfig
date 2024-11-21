@@ -5,10 +5,9 @@
 }
 
 #workspaces button.focused {
-  color: #cba6f7;
+  color: #89b4fa;
 }
 
 window#waybar {
-  /*background-color: rgb(17, 17, 27);*/
-  background-color: #285577;
+  background-color: rgb(17, 17, 27);
 }

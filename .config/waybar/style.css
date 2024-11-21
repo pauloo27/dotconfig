@@ -8,13 +8,12 @@
 window#waybar {
   background-color: rgba(17, 17, 27, 0.85);
 }
-
 #workspaces {
-  color: #cba6f7;
+  color: #89b4fa;
 }
 
 #window {
-  color: #cba6f7;
+  color: #89b4fa;
   margin-right: 0;
   padding-left: 5px;
   padding-right: 10px;
@@ -26,7 +25,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: #cba6f7;
+  color: #89b4fa;
 }
 
 #clock,
