@@ -4,7 +4,7 @@
     width = 300
     height = 300
     origin = top-right
-    offset = 15x49
+    offset = 10x10
     scale = 0
     notification_limit = 10
     progress_bar = true
@@ -18,7 +18,7 @@
     padding = 6
     horizontal_padding = 6
     text_icon_padding = 0
-    frame_width = 3
+    frame_width = 2
     frame_color = "#8EC07C"
     separator_color = frame
     sort = no
@@ -58,7 +58,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 10
+    corner_radius = 0
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
