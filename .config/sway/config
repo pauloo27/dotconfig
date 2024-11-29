@@ -26,7 +26,7 @@ set $menu_advanced llame
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output eDP-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output eDP-1 bg ~/medias/pictures/wallpapers/enabled/1.jpg fill
 
 output HDMI-A-1 bg /home/paulo/medias/pictures/wallpapers/enabled/1.jpg fill
 
