@@ -3,7 +3,7 @@
     follow = keyboard
     height = 60
     origin = top-right
-    offset = 10x10
+    offset = (10, 10)
     scale = 0
     notification_limit = 10
     progress_bar = true
