@@ -16,7 +16,6 @@ key[Shift-Tab]="${terminfo[kcbt]}"
 key[Alt-Left]="${terminfo[kLFT]}"
 key[Alt-Right]="${terminfo[kRIT]}"
 
-# setup key accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"     overwrite-mode
@@ -48,6 +47,10 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^H" backward-kill-word
 
+# edit the command line in $EDITOR
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^E' edit-command-line
 
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	autoload -Uz add-zle-hook-widget
