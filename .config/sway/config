@@ -96,7 +96,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+Return exec $menu_advanced
 
     # Key bindings for launching applications
-    bindsym $mod+W exec firefox
+    bindsym $mod+W exec zen-browser
     bindsym $mod+A exec nautilus
     bindsym $mod+Shift+P exec rstroller-gui
     bindsym $mod+Shift+E exec smsh ~/.config/smsh/power.json ~/.config/smsh/style.css
