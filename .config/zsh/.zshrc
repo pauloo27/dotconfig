@@ -47,6 +47,12 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt interactivecomments
 
+# edit the command line in $EDITOR. Not in the keybinds file because it was being
+# overwritten by the plugins
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^E' edit-command-line
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 eval "$(fzf --zsh)"
