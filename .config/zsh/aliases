@@ -122,6 +122,8 @@ alias ,w="git worktree"
     return 1
   fi
   
+  echo "Worktree warp in 3... 2..."
+  
   WORKTREE_PATH=$(git worktree list --porcelain | grep -B 2 -A 1 "branch refs/heads/$TARGET_BRANCH" | grep "worktree" | awk '{print $2}')
   
   if [ -z "$WORKTREE_PATH" ]; then
@@ -131,12 +133,24 @@ alias ,w="git worktree"
   
   if [ -d "$WORKTREE_PATH" ]; then
     cd "$WORKTREE_PATH" || return 1
-    echo "Warped to $TARGET_BRANCH worktree"
+    echo "... 🌌 You are now in worktree $TARGET_BRANCH"
   else
     echo "Worktree directory for branch $TARGET_BRANCH exists in git but not on filesystem!"
     return 1
   fi
 }
+
+### Tab complete...
+_ww_complete() {
+  local cur
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  
+  # Get the list of branches from git
+  if [ $COMP_CWORD -eq 1 ]; then
+    COMPREPLY=($(compgen -W "$(git worktree list --porcelain | grep 'branch refs/heads/' | sed 's/branch refs\/heads\///g')" -- "$cur"))
+  fi
+}
+complete -F _ww_complete ,ww
 
 ## Push as PR (gitea supports, not sure the others)
 ### this is wip tho, kinda broken

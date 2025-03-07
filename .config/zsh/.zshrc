@@ -32,6 +32,10 @@ ZVM_INIT_MODE=sourcing
 source ~/.local/antidote.zsh # i just symlink from /usr/share/zsh-antidote/antidote.zsh
 antidote load
 
+# Support bash-like completition
+autoload bashcompinit
+bashcompinit
+
 # Load integrations
 eval "$(starship init zsh)"
 source $ZDOTDIR/aliases
