@@ -25,6 +25,7 @@ alias ,fe="git submodule foreach"
 ## Status
 alias ,s="git status -s" # Cool looking Status 😎
 alias ,st="git status"
+alias ,ms="git diff --name-only --diff-filter=U" # Files to be merged
 
 ## Add to .gitignore
 ,ig() {
@@ -37,7 +38,7 @@ alias ,ss="git show"
 ## Add 
 alias ,a="git add" 
 alias ,aa="git add ." 
-alias ,ap="git add -a" # Interactive
+alias ,ap="git add -p" # Interactive
 
 ## Un-add (remove?)
 alias ,rm="git restore --staged"
@@ -58,7 +59,7 @@ alias ,ds="git diff --staged" # All (even added)
 alias ,cl="git clone"
 
 ## Reset
-alias ,rs="git checkout" # Reset
+alias ,rs="git restore" # Reset
 
 ## Branch
 alias ,b="git branch" # Create new branch
@@ -71,25 +72,13 @@ alias ,pl="git pull"
 ## Stash
 alias ,sh="git stash --include-untracked --message"
 
-# Cool
-alias ipp="curl ifconfig.io"
-alias eslint="npx eslint"
-alias k="kubectl"
-
-# Color
-alias ip="ip --color=auto"
-alias diff='diff --color=auto'
-alias ls="ls --color=auto"
-
-mkcd () {
-  mkdir "$1"
-  cd "$1"
-}
-
+# Push current branch
 ,psc() {
   git push -u origin $(git branch --show-current)
 }
 
+# Push as PR (gitea supports, not sure the others)
+# this is wip tho, kinda broken
 ,prm() {
   CURRENT_BRANCH=$(git branch --show-current)
 
@@ -104,7 +93,15 @@ mkcd () {
   git push origin HEAD:refs/for/master/$CURRENT_BRANCH -o title="$TITLE" -o description="$DESCRIPTION"
 }
 
-alias chp='cd $(cat ~/.local/share/nvim/project_nvim/project_history | fzf)'
+# Cool
+alias ipp="curl ifconfig.io"
+alias eslint="npx eslint"
+alias k="kubectl"
+
+# Color
+alias ip="ip --color=auto"
+alias diff='diff --color=auto'
+alias ls="ls --color=auto"
 
 alias p=pnpm
 
