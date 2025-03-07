@@ -82,6 +82,7 @@ alias ,sh="git stash --include-untracked --message"
 ## Worktree
 alias ,w="git worktree"
 
+### Create a worktree from an existing branch: <sourceBranch>
 ,wa() {
   SOURCE_BRANCH=$1
 
@@ -90,11 +91,11 @@ alias ,w="git worktree"
     return 1
   fi
 
-  git worktree add $SOURCE_BRANCH
-  echo "/$SOURCE_BRANCH" >> .git/info/exclude
+  REPO_ROOT=$(git rev-parse --show-toplevel)
+  git worktree add "$REPO_ROOT/.git/wt/$SOURCE_BRANCH" "$SOURCE_BRANCH"
 }
 
-### Create worktree <newBranch> [sourceBranch]
+### Create worktree: <newBranch> [sourceBranch]
 ,wc() {
   NEW_BRANCH=$1
   SOURCE_BRANCH=$2
@@ -104,14 +105,37 @@ alias ,w="git worktree"
     return 1
   fi
 
+  REPO_ROOT=$(git rev-parse --show-toplevel)
 
   if [ -z "$SOURCE_BRANCH" ]; then
-    git worktree add ./$NEW_BRANCH -b $NEW_BRANCH
+    git worktree add "$REPO_ROOT/.git/wt/$NEW_BRANCH" -b "$NEW_BRANCH"
   else
-    git worktree add ./$NEW_BRANCH -b $NEW_BRANCH $SOURCE_BRANCH
+    git worktree add "$REPO_ROOT/.git/wt/$NEW_BRANCH" -b "$NEW_BRANCH" "$SOURCE_BRANCH"
   fi
+}
 
-  echo "/$NEW_BRANCH" >> .git/info/exclude
+### Switch (WARP) to a worktree: <targetBranch>
+,ww() {
+  TARGET_BRANCH=$1
+  if [ -z "$TARGET_BRANCH" ]; then
+    echo 'usage: <targetBranch>'
+    return 1
+  fi
+  
+  WORKTREE_PATH=$(git worktree list --porcelain | grep -B 2 -A 1 "branch refs/heads/$TARGET_BRANCH" | grep "worktree" | awk '{print $2}')
+  
+  if [ -z "$WORKTREE_PATH" ]; then
+    echo "Worktree for branch $TARGET_BRANCH not found!"
+    return 1
+  fi
+  
+  if [ -d "$WORKTREE_PATH" ]; then
+    cd "$WORKTREE_PATH" || return 1
+    echo "Warped to $TARGET_BRANCH worktree"
+  else
+    echo "Worktree directory for branch $TARGET_BRANCH exists in git but not on filesystem!"
+    return 1
+  fi
 }
 
 ## Push as PR (gitea supports, not sure the others)
