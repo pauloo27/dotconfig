@@ -1,4 +1,6 @@
-# Upgrade
+#!/bin/bash
+
+## Upgrade
 alias upgrade="yay -Syu --cleanmenu=false --diffmenu=false --editmenu=false --sudoloop && cupdates upgraded && notify-send 'System upgraded' -i checkbox"
 
 # Random secret
@@ -72,13 +74,48 @@ alias ,pl="git pull"
 ## Stash
 alias ,sh="git stash --include-untracked --message"
 
-# Push current branch
+## Push current branch
 ,psc() {
   git push -u origin $(git branch --show-current)
 }
 
-# Push as PR (gitea supports, not sure the others)
-# this is wip tho, kinda broken
+## Worktree
+alias ,w="git worktree"
+
+,wa() {
+  SOURCE_BRANCH=$1
+
+  if [ -z "$SOURCE_BRANCH" ]; then
+    echo 'usage: <sourceBranch>'
+    return 1
+  fi
+
+  git worktree add $SOURCE_BRANCH
+  echo "/$SOURCE_BRANCH" >> .git/info/exclude
+}
+
+### Create worktree <newBranch> [sourceBranch]
+,wc() {
+  NEW_BRANCH=$1
+  SOURCE_BRANCH=$2
+
+  if [ -z "$NEW_BRANCH" ]; then
+    echo 'usage: <newBranch> [sourceBranch]'
+    return 1
+  fi
+
+
+  if [ -z "$SOURCE_BRANCH" ]; then
+    git worktree add ./$NEW_BRANCH -b $NEW_BRANCH
+  else
+    git worktree add ./$NEW_BRANCH -b $NEW_BRANCH $SOURCE_BRANCH
+  fi
+
+  echo "/$NEW_BRANCH" >> .git/info/exclude
+}
+
+## Push as PR (gitea supports, not sure the others)
+### this is wip tho, kinda broken
 ,prm() {
   CURRENT_BRANCH=$(git branch --show-current)
 
