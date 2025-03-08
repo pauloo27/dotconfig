@@ -173,6 +173,11 @@ alias ipp="curl ifconfig.io"
 alias eslint="npx eslint"
 alias k="kubectl"
 
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
+
 # Color
 alias ip="ip --color=auto"
 alias diff='diff --color=auto'
