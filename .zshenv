@@ -13,3 +13,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/scripts:$PATH"
 
 [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
+
+# pnpm
+export PNPM_HOME="/home/paulo/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

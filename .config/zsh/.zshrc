@@ -32,6 +32,8 @@ ZVM_INIT_MODE=sourcing
 source ~/.local/antidote.zsh # i just symlink from /usr/share/zsh-antidote/antidote.zsh
 antidote load
 
+ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+
 # Support bash-like completition
 autoload bashcompinit
 bashcompinit
