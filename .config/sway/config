@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+include /etc/sway/config.d/*
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -268,6 +270,8 @@ exec ~/.config/waybar/launch.sh
 
 # Startup apps
 exec dex -a -s .config/autostart/
+exec wlsunset -l -23.31 -L -51.10
+
 
 # Floating and stuff
 for_window [app_id="Rstroller"] floating enable
