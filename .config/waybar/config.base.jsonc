@@ -87,7 +87,7 @@
     "on-click": "planify",
     "format": "<span color='#cba6f7'> </span>{:%H:%M}",
     "format-alt": "<span color='#cba6f7'> </span>{:%a, %d %b • %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%Y/%m/%d - %A}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }
 
