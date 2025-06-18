@@ -1,5 +1,5 @@
 #!/bin/bash
-WM=$XDG_SESSION_DESKTOP
+WM=${XDG_SESSION_DESKTOP,,}
 
 echo "Lauching waybar for $WM"
 
