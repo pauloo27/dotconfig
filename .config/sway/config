@@ -29,7 +29,7 @@ set $menu_advanced llame
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 output HDMI-A-1 bg /home/paulo/medias/pictures/wallpapers/enabled/1.jpg fill
-output DP-1 bg /home/paulo/medias/pictures/wallpapers/enabled/2.jpg fill
+output DP-1 bg /home/paulo/medias/pictures/wallpapers/enabled/2.png fill
 
 #
 # Example configuration:
