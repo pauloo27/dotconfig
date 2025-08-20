@@ -20,12 +20,14 @@ window#waybar {
 }
 
 #workspaces button {
-  color: #cdd6f4;
+  color: #908caa;
   border-radius: 0;
+  font-weight: normal;
 }
 
 #workspaces button.active {
-  color: #908caa;
+  color: #cdd6f4;
+  font-weight: bold;
 }
 
 #clock,
