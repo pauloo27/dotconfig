@@ -6,8 +6,9 @@
 }
 
 window#waybar {
-  background-color: rgba(17, 17, 27, 0.85);
+  background-color: rgba(25, 23, 36, 0.9);
 }
+
 #workspaces {
   color: #908caa;
 }

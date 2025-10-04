@@ -3,9 +3,11 @@
   "modules-center": ["custom/rstroller"],
   "modules-right": ["pulseaudio", "tray", "privacy", "clock"],
   "custom/rstroller": {
-    "exec": "rstroller waybar",
+    "exec": "rstroller waybar 2> /tmp/rstroller-log",
     "return-type": "json",
-    "on-click": "rstroller-gui"
+    "on-click": "rstroller-gui",
+    "on-scroll-up": "rstroller scroll-player up",
+    "on-scroll-down": "rstroller scroll-player down"
   },
   "privacy": {
     "icon-spacing": 4,
