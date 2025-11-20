@@ -12,7 +12,7 @@
         "actions": [
           {
             "type": "Shell",
-            "value": "hyprshot -m window -o /home/paulo/medias/pictures/prints"
+            "value": "grimblast save active /home/paulo/medias/pictures/prints/$(date +%Y%m%d-%H%M%S).png && ls -t /home/paulo/medias/pictures/prints | head -1 | xargs -I {} echo \"/home/paulo/medias/pictures/prints/{}\" | wl-copy"
           },
           {
             "type": "ExitWithCode",
@@ -27,7 +27,7 @@
         "actions": [
           {
             "type": "Shell",
-            "value": "hyprshot -m window --clipboard-only"
+            "value": "grimblast copy active"
           },
           {
             "type": "ExitWithCode",
