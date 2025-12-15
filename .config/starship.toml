@@ -25,3 +25,6 @@ disabled = true
 
 [elixir]
 disabled = true
+
+[deno]
+symbol = " "
