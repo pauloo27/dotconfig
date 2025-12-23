@@ -28,3 +28,6 @@ disabled = true
 
 [deno]
 symbol = " "
+
+[hostname]
+starssh_symbol = "󰖟"
