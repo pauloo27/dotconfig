@@ -2,6 +2,14 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
+# Nix
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+else
+  # Fallback: manually add Nix to PATH
+  export PATH="$HOME/.nix-profile/bin:$PATH"
+fi
+
 # golang
 export GOPATH="$HOME/dev/go"
 export PATH="$PATH:$GOPATH/bin"

@@ -63,5 +63,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 eval "$(fzf --zsh)"
 
+source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
 # System fetch
 f
+
