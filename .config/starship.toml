@@ -30,4 +30,4 @@ disabled = true
 symbol = " "
 
 [hostname]
-starssh_symbol = "󰖟"
+ssh_symbol = "󰖟"
