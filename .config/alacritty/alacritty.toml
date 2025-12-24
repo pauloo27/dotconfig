@@ -7,6 +7,11 @@ padding={x = 10, y = 10}
 
 [font]
 normal={family="Comic Code Medium", style="Regular"}
+#normal={family="SpaceMono Nerd Font Mono", style="Bold"}
+#normal={family="Adwaita Mono", style="Regular"}
+#normal={family="Fira Code Nerd Font Mono Med", style="Regular"}
+#normal={family="JetbrainsMono NF Medium", style="Regular"}
+#normal={family="CommitMono Nerd Font", style="Regular"}
 size=10
 
 [cursor]
