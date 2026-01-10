@@ -5,7 +5,7 @@ hyprpaper &
 dunst &
 ~/.config/waybar/launch.sh &
 
-dex -a -s .config/autostart/ &
+#dex -a -s .config/autostart/ &
 wlsunset -T 5000 &
 
 exit 0
