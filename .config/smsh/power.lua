@@ -1,3 +1,5 @@
+require("helpers")
+
 load_css("./style.css")
 
 window({
@@ -14,76 +16,74 @@ window({
 				type = "button",
 				text = "",
 				tooltip = "Lock",
-				actions = {
-					{
-						type = "shell",
-						value = "swaylock",
-					},
-					{
-						type = "exit_with_code",
-						value = "0",
-					},
-				},
+				action = function()
+					os.execute("swaylock")
+					os.exit(0)
+				end,
 			},
 			{
 				type = "button",
 				text = "",
 				tooltip = "Shutdown",
-				actions = {
-					{
-						type = "shell",
-						value = 'smsh ~/.config/smsh/confirm.lua ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman "shutdown now"',
-					},
-					{
-						type = "exit_with_code",
-						value = "0",
-					},
-				},
+				action = function()
+					confirm({
+						message = "Shutdown?",
+						present = true,
+						exit_on_close = true,
+						on_yes = function()
+							run_unless_pacman("shutdown now")
+							os.exit(0)
+						end,
+					})
+				end,
 			},
 			{
 				type = "button",
 				text = "",
 				tooltip = "Reboot",
-				actions = {
-					{
-						type = "shell",
-						value = 'smsh ~/.config/smsh/confirm.lua ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman "reboot"',
-					},
-					{
-						type = "exit_with_code",
-						value = "0",
-					},
-				},
+				action = function()
+					confirm({
+						message = "Reboot?",
+						present = true,
+						exit_on_close = true,
+						on_yes = function()
+							run_unless_pacman("reboot")
+							os.exit(0)
+						end,
+					})
+				end,
 			},
 			{
 				type = "button",
 				text = "",
 				tooltip = "Reboot into Windows",
-				actions = {
-					{
-						type = "shell",
-						value = 'smsh ~/.config/smsh/confirm.lua ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman "~/.config/scripts/reboot-into-windows.sh"',
-					},
-					{
-						type = "exit_with_code",
-						value = "0",
-					},
-				},
+				action = function()
+					confirm({
+						message = "Reboot into Windows?",
+						present = true,
+						exit_on_close = true,
+						on_yes = function()
+							run_unless_pacman("~/.config/scripts/reboot-into-windows.sh")
+							os.exit(0)
+						end,
+					})
+				end,
 			},
 			{
 				type = "button",
 				text = "󰗽",
 				tooltip = "Logout",
-				actions = {
-					{
-						type = "shell",
-						value = 'smsh ~/.config/smsh/confirm.lua ~/.config/smsh/style.css && ~/.config/scripts/run-unless-pacman "hyprctl dispatch exit exit || swaymsg exit"',
-					},
-					{
-						type = "exit_with_code",
-						value = "0",
-					},
-				},
+				action = function()
+					confirm({
+						message = "Logout?",
+						present = true,
+						exit_on_close = true,
+						on_yes = function()
+							run_unless_pacman("hyprctl dispatch exit exit || swaymsg exit")
+							os.exit(0)
+						end,
+					})
+				end,
 			},
 		},
 	},

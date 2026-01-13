@@ -20,23 +20,17 @@ function confirm(opts)
 					type = "button",
 					text = opts.yes_text or "Yes",
 					tooltip = opts.yes_tooltip or "Yes!",
-					actions = {
-						{
-							type = "exit_with_code",
-							value = "0",
-						},
-					},
+					action = opts.on_yes or function()
+						os.exit(0)
+					end,
 				},
 				{
 					type = "button",
 					text = opts.no_text or "No",
 					tooltip = opts.no_tooltip or "No",
-					actions = {
-						{
-							type = "exit_with_code",
-							value = "1",
-						},
-					},
+					action = opts.on_no or function()
+						os.exit(1)
+					end,
 				},
 			},
 		},
@@ -60,17 +54,22 @@ function prompt(opts)
 					type = "entry",
 					text = opts.default_text or "",
 					tooltip = opts.tooltip or "Type here",
-					actions = {
-						{
-							type = "print_value_to_stdout",
-						},
-						{
-							type = "exit_with_code",
-							value = "0",
-						},
-					},
+					action = function(value)
+						print(value)
+						os.exit(0)
+					end,
 				},
 			},
 		},
 	})
+end
+
+function run_unless_pacman(cmd)
+	local lockfile = io.open("/var/lib/pacman/db.lck", "r")
+	if lockfile then
+		lockfile:close()
+		os.execute("notify-send 'Cannot do that while pacman is running' -i system-reboot -u critical")
+	else
+		os.execute(cmd)
+	end
 end

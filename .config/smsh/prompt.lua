@@ -1,4 +1,3 @@
-print(package.path)
 require("helpers")
 
 load_css("./prompt.css")
