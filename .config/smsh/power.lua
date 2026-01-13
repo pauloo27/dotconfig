@@ -1,8 +1,9 @@
 require("helpers")
+require("wrapper")
 
-load_css("./style.css")
+load_stylesheet("./style.css")
 
-window({
+new_window({
 	title = "SMSH: Power",
 	enable_vim_keys = true,
 	enable_esc_as_exit = true,

@@ -1,6 +1,7 @@
 require("helpers")
+require("wrapper")
 
-load_css("./prompt.css")
+load_stylesheet("./prompt.css")
 
 prompt({
 	present = true,

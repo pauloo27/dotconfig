@@ -1,6 +1,7 @@
 require("helpers")
+require("wrapper")
 
-load_css("./style.css")
+load_stylesheet("./style.css")
 
 confirm({
 	message = "Are you sure",
