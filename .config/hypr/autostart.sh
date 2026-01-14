@@ -3,7 +3,7 @@
 
 hyprpaper &
 dunst &
-~/.config/waybar/launch.sh &
+waybar &
 
 #dex -a -s .config/autostart/ &
 wlsunset -T 5000 &
