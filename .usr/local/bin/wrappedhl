@@ -1,7 +1,0 @@
-#!/bin/sh
-
-#export XDG_SESSION_TYPE=wayland
-
-[ -f /tmp/ly-hl-log.txt ] && rm /tmp/ly-hl-log.txt
-# exec Hyprland but redirect all output to a file
-exec Hyprland > /tmp/ly-hl-log.txt 2>&1

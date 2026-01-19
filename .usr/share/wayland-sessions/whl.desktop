@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Wrapped Hyprland
-Comment=An intelligent dynamic tiling Wayland compositor
-Exec=wrappedhl
-Type=Application
