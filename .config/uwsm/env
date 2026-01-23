@@ -1,1 +1,1 @@
-export PATH=$HOME/.nix-profile/bin:$PATH
+/nix/store/ixbbpg8bkym2llm1adggyrwkhzpjhxqq-home-manager-files/.config/uwsm/env
